@@ -65,7 +65,7 @@ This project was originally a port of [v0.4.3](https://github.com/graphql/graphq
 |:-------------:|:-------------:|:------------:|
 | [graphql-go-handler](https://github.com/graphql-go/graphql-go-handler) | [fairyhunter13 Ismail](https://github.com/sogko) | Middleware to handle GraphQL queries through HTTP requests. |
 | [graphql-relay-go](https://github.com/graphql-go/graphql-relay-go) | [fairyhunter13 Ismail](https://github.com/sogko) | Lib to construct a graphql-go server supporting react-relay. |
-| [golang-relay-starter-kit](https://github.com/graphql-go/golang-relay-starter-kit) | [fairyhunter13 Ismail](https://github.com/sogko) | Barebones starting point for a Relay application with Golang GraphQL server. |
+| [golang-relay-starter-kit](https://github.com/sogko/golang-relay-starter-kit) | [fairyhunter13 Ismail](https://github.com/sogko) | Barebones starting point for a Relay application with Golang GraphQL server. |
 
 ### Blog Posts
 - [Golang + GraphQL + Relay](http://wehavefaces.net/)
