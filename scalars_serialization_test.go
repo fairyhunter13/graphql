@@ -21,7 +21,7 @@ type float64SerializationTest struct {
 
 type stringSerializationTest struct {
 	Value    interface{}
-	Expected string
+	Expected interface{}
 }
 
 type dateTimeSerializationTest struct {
@@ -132,6 +132,7 @@ func TestTypeSystem_Scalar_SerializesOutputFloat(t *testing.T) {
 }
 
 func TestTypeSystem_Scalar_SerializesOutputStrings(t *testing.T) {
+	hello := "hello"
 	tests := []stringSerializationTest{
 		{"string", "string"},
 		{int(1), "1"},
@@ -139,6 +140,8 @@ func TestTypeSystem_Scalar_SerializesOutputStrings(t *testing.T) {
 		{float64(-1.1), "-1.1"},
 		{true, "true"},
 		{false, "false"},
+		{(*string)(nil), nil},
+		{&hello, "hello"},
 	}
 
 	for _, test := range tests {
