@@ -8,10 +8,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/graphql-go/graphql/gqlerrors"
-	"github.com/graphql-go/graphql/language/ast"
-	"github.com/graphql-go/graphql/language/kinds"
-	"github.com/graphql-go/graphql/language/printer"
+	"github.com/fairyhunter13/graphql/gqlerrors"
+	"github.com/fairyhunter13/graphql/language/ast"
+	"github.com/fairyhunter13/graphql/language/kinds"
+	"github.com/fairyhunter13/graphql/language/printer"
+	rh "github.com/fairyhunter13/reflecthelper/v4"
 )
 
 // Prepares an object map of variableValues of the correct type based on the
@@ -301,7 +302,7 @@ func isNullish(src interface{}) bool {
 		return true
 	}
 	value := reflect.ValueOf(src)
-	if value.Kind() == reflect.Ptr {
+	if rh.IsKindValueElemable(rh.GetKind(value)) {
 		if value.IsNil() {
 			return true
 		}

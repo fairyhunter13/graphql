@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/fairyhunter13/graphql/language/ast"
 	"github.com/fairyhunter13/reflecthelper/v4"
-	"github.com/graphql-go/graphql/language/ast"
 )
 
 // As per the GraphQL Spec, Integers are only treated as valid when a valid
