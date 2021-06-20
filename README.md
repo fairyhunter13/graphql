@@ -1,4 +1,4 @@
-# graphql [![CircleCI](https://circleci.com/gh/graphql-go/graphql/tree/master.svg?style=svg)](https://circleci.com/gh/graphql-go/graphql/tree/master) [![Go Reference](https://pkg.go.dev/badge/github.com/graphql-go/graphql.svg)](https://pkg.go.dev/github.com/graphql-go/graphql) [![Coverage Status](https://coveralls.io/repos/github/graphql-go/graphql/badge.svg?branch=master)](https://coveralls.io/github/graphql-go/graphql?branch=master) [![Join the chat at https://gitter.im/graphql-go/graphql](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/graphql-go/graphql?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# graphql [![CircleCI](https://circleci.com/gh/fairyhunter13/graphql/tree/master.svg?style=svg)](https://circleci.com/gh/fairyhunter13/graphql/tree/master) [![Go Reference](https://pkg.go.dev/badge/github.com/fairyhunter13/graphql.svg)](https://pkg.go.dev/github.com/fairyhunter13/graphql) [![Coverage Status](https://coveralls.io/repos/github/fairyhunter13/graphql/badge.svg?branch=master)](https://coveralls.io/github/fairyhunter13/graphql?branch=master) [![Join the chat at https://gitter.im/fairyhunter13/graphql](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/fairyhunter13/graphql?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 An implementation of GraphQL in Go. Follows the official reference implementation [`graphql-js`](https://github.com/graphql/graphql-js).
 
@@ -6,13 +6,13 @@ Supports: queries, mutations & subscriptions.
 
 ### Documentation
 
-godoc: https://pkg.go.dev/github.com/graphql-go/graphql
+godoc: https://pkg.go.dev/github.com/fairyhunter13/graphql
 
 ### Getting Started
 
 To install the library, run:
 ```bash
-go get github.com/graphql-go/graphql
+go get github.com/fairyhunter13/graphql
 ```
 
 The following is a simple example which defines a schema with a single `hello` string-type field and a `Resolve` method which returns the string `world`. A GraphQL query is performed against this schema with the resulting output printed in JSON format.
@@ -25,7 +25,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/graphql-go/graphql"
+	"github.com/fairyhunter13/graphql"
 )
 
 func main() {
@@ -60,7 +60,7 @@ func main() {
 	fmt.Printf("%s \n", rJSON) // {"data":{"hello":"world"}}
 }
 ```
-For more complex examples, refer to the [examples/](https://github.com/graphql-go/graphql/tree/master/examples/) directory and [graphql_test.go](https://github.com/graphql-go/graphql/blob/master/graphql_test.go).
+For more complex examples, refer to the [examples/](https://github.com/fairyhunter13/graphql/tree/master/examples/) directory and [graphql_test.go](https://github.com/fairyhunter13/graphql/blob/master/graphql_test.go).
 
 ### Third Party Libraries
 | Name          | Author        | Description  |
@@ -72,4 +72,3 @@ For more complex examples, refer to the [examples/](https://github.com/graphql-g
 
 ### Blog Posts
 - [Golang + GraphQL + Relay](https://wehavefaces.net/learn-golang-graphql-relay-1-e59ea174a902)
-

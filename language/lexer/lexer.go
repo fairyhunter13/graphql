@@ -7,8 +7,8 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/graphql-go/graphql/gqlerrors"
-	"github.com/graphql-go/graphql/language/source"
+	"github.com/fairyhunter13/graphql/gqlerrors"
+	"github.com/fairyhunter13/graphql/language/source"
 )
 
 type TokenKind int

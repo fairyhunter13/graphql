@@ -3,10 +3,10 @@ package parser
 import (
 	"fmt"
 
-	"github.com/graphql-go/graphql/gqlerrors"
-	"github.com/graphql-go/graphql/language/ast"
-	"github.com/graphql-go/graphql/language/lexer"
-	"github.com/graphql-go/graphql/language/source"
+	"github.com/fairyhunter13/graphql/gqlerrors"
+	"github.com/fairyhunter13/graphql/language/ast"
+	"github.com/fairyhunter13/graphql/language/lexer"
+	"github.com/fairyhunter13/graphql/language/source"
 )
 
 type parseFn func(parser *Parser) (interface{}, error)

@@ -1,7 +1,7 @@
 package graphql
 
 import (
-	"github.com/graphql-go/graphql/gqlerrors"
+	"github.com/fairyhunter13/graphql/gqlerrors"
 )
 
 // type Schema interface{}

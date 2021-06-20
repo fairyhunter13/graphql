@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"reflect"
 
-	"github.com/graphql-go/graphql/language/ast"
-	"github.com/graphql-go/graphql/language/typeInfo"
+	"github.com/fairyhunter13/graphql/language/ast"
+	"github.com/fairyhunter13/graphql/language/typeInfo"
 )
 
 const (
