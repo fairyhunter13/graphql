@@ -6,7 +6,8 @@ import (
 	"reflect"
 	"regexp"
 
-	"github.com/graphql-go/graphql/language/ast"
+	"github.com/fairyhunter13/graphql/language/ast"
+	rh "github.com/fairyhunter13/reflecthelper/v4"
 )
 
 // Type interface for all of the possible kinds of GraphQL types
@@ -990,7 +991,11 @@ func (gt *Enum) ParseValue(value interface{}) interface{} {
 	case *string:
 		v = *value
 	default:
-		return nil
+		var err error
+		v, err = rh.ExtractString(reflect.ValueOf(value))
+		if err != nil {
+			return nil
+		}
 	}
 	if enumValue, ok := gt.getNameLookup()[v]; ok {
 		return enumValue.Value

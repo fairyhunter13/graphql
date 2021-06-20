@@ -23,7 +23,7 @@ func TestRace(t *testing.T) {
 			"runtime"
 			"sync"
 
-			"github.com/graphql-go/graphql"
+			"github.com/fairyhunter13/graphql"
 		)
 
 		func main() {
@@ -50,7 +50,7 @@ func TestRace(t *testing.T) {
 			}
 
 			wg.Wait()
-		} 
+		}
 	`), 0755)
 	if err != nil {
 		t.Fatal(err)
