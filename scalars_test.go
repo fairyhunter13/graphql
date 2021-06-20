@@ -738,7 +738,7 @@ func TestCoerceBool(t *testing.T) {
 		},
 		{
 			in:   make(map[string]interface{}),
-			want: false,
+			want: nil,
 		},
 	}
 

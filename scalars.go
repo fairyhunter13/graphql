@@ -3,9 +3,11 @@ package graphql
 import (
 	"fmt"
 	"math"
+	"reflect"
 	"strconv"
 	"time"
 
+	"github.com/fairyhunter13/reflecthelper/v4"
 	"github.com/graphql-go/graphql/language/ast"
 )
 
@@ -17,7 +19,7 @@ import (
 func coerceInt(value interface{}) interface{} {
 	switch value := value.(type) {
 	case bool:
-		if value == true {
+		if value {
 			return 1
 		}
 		return 0
@@ -146,7 +148,11 @@ func coerceInt(value interface{}) interface{} {
 
 	// If the value cannot be transformed into an int, return nil instead of '0'
 	// to denote 'no integer found'
-	return nil
+	val, err := reflecthelper.ExtractInt(reflect.ValueOf(value))
+	if err != nil {
+		return nil
+	}
+	return coerceInt(val)
 }
 
 // Int is the GraphQL Integer type definition.
@@ -170,7 +176,7 @@ var Int = NewScalar(ScalarConfig{
 func coerceFloat(value interface{}) interface{} {
 	switch value := value.(type) {
 	case bool:
-		if value == true {
+		if value {
 			return 1.0
 		}
 		return 0.0
@@ -278,7 +284,11 @@ func coerceFloat(value interface{}) interface{} {
 
 	// If the value cannot be transformed into an float, return nil instead of '0.0'
 	// to denote 'no float found'
-	return nil
+	val, err := reflecthelper.ExtractFloat(reflect.ValueOf(value))
+	if err != nil {
+		return nil
+	}
+	return coerceFloat(val)
 }
 
 // Float is the GraphQL float type definition.
@@ -472,7 +482,11 @@ func coerceBool(value interface{}) interface{} {
 		}
 		return coerceBool(*value)
 	}
-	return false
+	val, err := reflecthelper.ExtractBool(reflect.ValueOf(value))
+	if err != nil {
+		return nil
+	}
+	return val
 }
 
 // Boolean is the GraphQL boolean type definition
@@ -526,7 +540,11 @@ func serializeDateTime(value interface{}) interface{} {
 		}
 		return serializeDateTime(*value)
 	default:
-		return nil
+		val, err := reflecthelper.ExtractTime(reflect.ValueOf(value))
+		if err != nil {
+			return nil
+		}
+		return serializeDateTime(val)
 	}
 }
 
@@ -550,7 +568,11 @@ func unserializeDateTime(value interface{}) interface{} {
 	case time.Time:
 		return value
 	default:
-		return nil
+		val, err := reflecthelper.ExtractTime(reflect.ValueOf(value))
+		if err != nil {
+			return nil
+		}
+		return val
 	}
 }
 
